@@ -84,3 +84,7 @@ Rust의 `application::ScanMovieFiles`가 기본 영상 glob 정책과 스트리�
 ## 추가 공통 모듈
 
 Movie/Repo의 버튼 모양을 유지하는 `@yoophi/ui-radix/components/compatible-button`을 로컬 UI 경로에서 재공개합니다. 설정 초안의 dirty·외부 갱신은 `settings-core`를 사용하고, 디렉터리 선택 보정은 `collection-core`를 사용합니다. 진행 중·실패한 탐색은 이전 선택을 유지하고 완료 목록에서만 삭제 여부를 판단하는 앱 정책은 그대로입니다. 공통 저장소를 형제 경로에 checkout하고 먼저 의존성을 설치해야 합니다.
+
+## 잔여 공통화 정리
+
+파일 이름 비교는 explorer-core의 소문자화·Unicode 코드포인트 비교를 사용합니다. 로컬 UI의 테마와 cn 경로는 ui-radix의 호환 테마·유틸리티를 재수출하며 기존 모양을 유지합니다. 상세 선정·검증·유지 근거는 [공통화 보고서](../explorer-kit/docs/residual-commonality-report.md)를 참고하세요.
