@@ -1,0 +1,17 @@
+{
+  "name": "movie-explorer",
+  "private": true,
+  "scripts": {
+    "dev": "TAURI_PACKAGE=desktop explorer-tauri-dev",
+    "build": "pnpm --filter desktop build",
+    "storybook": "pnpm --filter desktop storybook",
+    "build-storybook": "pnpm --filter desktop build-storybook",
+    "typecheck": "pnpm -r exec tsc --noEmit",
+    "tauri": "pnpm --filter desktop tauri",
+    "tauri:dev": "TAURI_PACKAGE=desktop explorer-tauri-dev"
+  },
+  "devDependencies": {
+    "@yoophi/explorer-dev-tools": "link:../explorer-kit/packages/dev-tools",
+    "typescript": "~5.8.3"
+  }
+}

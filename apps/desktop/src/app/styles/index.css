@@ -1,0 +1,4 @@
+@import "@movie-explorer/ui/globals.css";
+
+@source "../../../../../packages/ui/src";
+@source "../../../../../../explorer-kit/packages/settings-ui/src";

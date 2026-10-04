@@ -1,0 +1,8 @@
+node_modules
+dist
+storybook-static
+
+apps/*/dist
+apps/*/storybook-static
+
+.DS_Store
