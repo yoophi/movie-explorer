@@ -80,3 +80,7 @@ Rust의 `application::ScanMovieFiles`가 기본 영상 glob 정책과 스트리�
 - [공통 코드 기능 리뷰와 미해결 항목](../explorer-kit/docs/shared-code-review.md)
 
 문서 기준: 2026-10-05 로컬 구현. 아키텍처 리뷰의 개선 권고와 공통 기능 후보는 완료된 구현과 구분합니다.
+
+## 추가 공통 모듈
+
+Movie/Repo의 버튼 모양을 유지하는 `@yoophi/ui-radix/components/compatible-button`을 로컬 UI 경로에서 재공개합니다. 설정 초안의 dirty·외부 갱신은 `settings-core`를 사용하고, 디렉터리 선택 보정은 `collection-core`를 사용합니다. 진행 중·실패한 탐색은 이전 선택을 유지하고 완료 목록에서만 삭제 여부를 판단하는 앱 정책은 그대로입니다. 공통 저장소를 형제 경로에 checkout하고 먼저 의존성을 설치해야 합니다.

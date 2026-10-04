@@ -17,7 +17,7 @@ export default defineConfig(() => ({
     },
   },
   optimizeDeps: {
-    exclude: ["@movie-explorer/ui", "@yoophi/explorer-core", "@yoophi/scan-client", "@yoophi/settings-core", "@yoophi/settings-ui"],
+    exclude: ["@yoophi/ui-radix", "@yoophi/collection-core", "@movie-explorer/ui", "@yoophi/explorer-core", "@yoophi/scan-client", "@yoophi/settings-core", "@yoophi/settings-ui"],
   },
   clearScreen: false,
   server: {

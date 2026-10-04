@@ -1,4 +1,4 @@
-import { createSettingsStore } from "@yoophi/settings-core";
+import { createSettingsStore, createSettingsDraft, editSettingsDraft, syncSettingsDraft, type SettingsDraft } from "@yoophi/settings-core";
 
 export type MovieFileViewMode = "thumbnail" | "grid" | "compact";
 
@@ -23,18 +23,21 @@ export type PatternDraft = {
   dirty: boolean;
 };
 
+const formatPattern = (value: string) => value;
+const sharedDraft = (draft: PatternDraft): SettingsDraft<string> => ({ text: draft.text, confirmed: draft.appliedText, dirty: draft.dirty });
+const appDraft = (draft: SettingsDraft<string>): PatternDraft => ({ text: draft.text, appliedText: draft.confirmed, dirty: draft.dirty });
+
 export function confirmedPatternDraft(appliedText: string): PatternDraft {
-  return { text: appliedText, appliedText, dirty: false };
+  return appDraft(createSettingsDraft(appliedText, formatPattern));
 }
 
 export function editPatternDraft(current: PatternDraft, text: string): PatternDraft {
-  return { ...current, text, dirty: text !== current.appliedText };
+  return appDraft(editSettingsDraft(sharedDraft(current), text, formatPattern));
 }
 
 export function syncPatternDraft(current: PatternDraft, appliedText: string): PatternDraft {
   if (current.appliedText === appliedText) return current;
-  if (!current.dirty) return confirmedPatternDraft(appliedText);
-  return { ...current, appliedText, dirty: current.text !== appliedText };
+  return appDraft(syncSettingsDraft(sharedDraft(current), appliedText, formatPattern));
 }
 
 export function parseMoviePreferences(value: unknown): MoviePreferences {

@@ -35,6 +35,9 @@ importers:
       '@tauri-apps/plugin-opener':
         specifier: ^2
         version: 2.5.4
+      '@yoophi/collection-core':
+        specifier: link:../../../explorer-kit/packages/collection-core
+        version: link:../../../explorer-kit/packages/collection-core
       '@yoophi/explorer-core':
         specifier: link:../../../explorer-kit/packages/core
         version: link:../../../explorer-kit/packages/core
@@ -111,6 +114,9 @@ importers:
       '@fontsource-variable/geist':
         specifier: ^5.2.9
         version: 5.2.9
+      '@yoophi/ui-radix':
+        specifier: link:../../../explorer-kit/packages/ui-radix
+        version: link:../../../explorer-kit/packages/ui-radix
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
